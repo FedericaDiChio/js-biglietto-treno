@@ -22,10 +22,12 @@ STEP:
 4.
 */
 
+var result = document.getElementById("ticket");
+
 // Variables Users
 var userKm = parseInt(prompt("Quanti km vuoi percorrere?"));
 var userAge = parseInt(prompt("Quanti anni ha il passeggero?"));
-var message = "Il prezzo del tuo biglietto è ";
+var message = "Il prezzo del tuo biglietto è di € ";
 // console.log(userKm);
 // console.log(userAge);
 
@@ -44,9 +46,12 @@ var ticketSenior = ticketPrice - senior;
 
 // Final price
 if (userAge < 18) {
-    console.log(message + ticketUnderAge.toFixed(2));
+    // console.log(message + ticketUnderAge.toFixed(2));
+    result.innerHTML = message + ticketUnderAge.toFixed(2);
 } else if (userAge > 65) {
-    console.log(message + ticketSenior.toFixed(2));
+    // console.log(message + ticketSenior.toFixed(2));
+    result.innerHTML = message + ticketSenior.toFixed(2);
 } else {
-    console.log (message + ticketPrice.toFixed(2));
+    // console.log (message + ticketPrice.toFixed(2));
+    result.innerHTML = message + ticketPrice.toFixed(2);
 }
