@@ -44,9 +44,9 @@ var ticketSenior = ticketPrice - senior;
 
 // Final price
 if (userAge < 18) {
-    console.log(message + ticketUnderAge);
+    console.log(message + ticketUnderAge.toFixed(2));
 } else if (userAge > 65) {
-    console.log(message + ticketSenior);
+    console.log(message + ticketSenior.toFixed(2));
 } else {
-    console.log (message + ticketPrice);
+    console.log (message + ticketPrice.toFixed(2));
 }
