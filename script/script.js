@@ -22,14 +22,31 @@ STEP:
 4.
 */
 
-// Variabili utente
+// Variables Users
 var userKm = parseInt(prompt("Quanti km vuoi percorrere?"));
 var userAge = parseInt(prompt("Quanti anni ha il passeggero?"));
-var message = "Il prezzo del tuo biglietto è"
-console.log(userKm);
-console.log(userAge);
+var message = "Il prezzo del tuo biglietto è ";
+// console.log(userKm);
+// console.log(userAge);
 
-// Variabili ticket 
+// Variables Ticket Fullprice
 var ticketKm = 0.21;
 var ticketPrice = ticketKm * userKm; 
-console.log(ticketPrice);
+// console.log(ticketPrice);
+
+// Variables Discount Underage
+var underAge = ticketPrice * 20 / 100;
+var ticketUnderAge = ticketPrice - underAge;
+// Variables Discount Senior
+var senior = ticketPrice * 40 / 100;
+var ticketSenior = ticketPrice - senior;
+
+
+// Final price
+if (userAge < 18) {
+    console.log(message + ticketUnderAge);
+} else if (userAge > 65) {
+    console.log(message + ticketSenior);
+} else {
+    console.log (message + ticketPrice);
+}
