@@ -26,3 +26,10 @@ STEP:
 var userKm = parseInt(prompt("Quanti km vuoi percorrere?"));
 var userAge = parseInt(prompt("Quanti anni ha il passeggero?"));
 var message = "Il prezzo del tuo biglietto è"
+console.log(userKm);
+console.log(userAge);
+
+// Variabili ticket 
+var ticketKm = 0.21;
+var ticketPrice = ticketKm * userKm; 
+console.log(ticketPrice);
