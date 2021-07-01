@@ -19,7 +19,7 @@ STEP:
 1. creare variabili e prompt per chiedere i km che vuole percorrere e l'età del passeggero;
 2. calcolare prezzo del biglietto. 
 3. calcolare lo sconto;
-4.
+4. calcolare biglietti finali in base all'età;
 */
 
 var result = document.getElementById("ticket");
