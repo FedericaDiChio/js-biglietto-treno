@@ -1,6 +1,3 @@
-// CONSOLE LOG 
-console.log("JS OK");
-
 // TRACCIA ESERCIZIO 
 
 /* Il programma dovrà chiedere all'utente il numero di chilometri che vuole percorrere 
@@ -22,36 +19,32 @@ STEP:
 4. calcolare biglietti finali in base all'età;
 */
 
-var result = document.getElementById("ticket");
+var priceDisplay = document.getElementById("ticket");
+var message = "Il prezzo del tuo biglietto è di € ";
+// console.log(priceDisplay);
+
 
 // Variables Users
 var userKm = parseInt(prompt("Quanti km vuoi percorrere?"));
 var userAge = parseInt(prompt("Quanti anni ha il passeggero?"));
-var message = "Il prezzo del tuo biglietto è di € ";
 // console.log(userKm);
 // console.log(userAge);
 
 // Variables Ticket Fullprice
-var ticketKm = 0.21;
-var ticketPrice = ticketKm * userKm; 
+var ticketPrice = userKm * 0.21; 
 // console.log(ticketPrice);
 
-// Variables Discount Underage
-var underAge = ticketPrice * 20 / 100;
-var ticketUnderAge = ticketPrice - underAge;
-// Variables Discount Senior
-var senior = ticketPrice * 40 / 100;
-var ticketSenior = ticketPrice - senior;
 
-
-// Final price
+// Calculation
 if (userAge < 18) {
-    // console.log(message + ticketUnderAge.toFixed(2));
-    result.innerHTML = message + ticketUnderAge.toFixed(2);
-} else if (userAge > 65) {
-    // console.log(message + ticketSenior.toFixed(2));
-    result.innerHTML = message + ticketSenior.toFixed(2);
-} else {
-    // console.log (message + ticketPrice.toFixed(2));
-    result.innerHTML = message + ticketPrice.toFixed(2);
+    ticketPrice *= 0.8;
+    // console.log(ticketPrice);
 }
+
+if (userAge > 65) {
+    ticketPrice *= 0.6;
+    // console.log(ticketPrice);
+} 
+
+// Final Price 
+priceDisplay.innerHTML = message + ticketPrice.toFixed(2);
